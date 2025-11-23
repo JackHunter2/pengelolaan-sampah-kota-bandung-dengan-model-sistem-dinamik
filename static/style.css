@@ -1,0 +1,128 @@
+:root {
+    --bg-light: #f5f7fb;
+    --bg-dark: #101522;
+    --text-dark: #1f2633;
+    --text-light: #f4f4f4;
+    --accent: #0d6efd;
+    --accent-soft: #cfe2ff;
+}
+
+body.app-body {
+    background: linear-gradient(180deg, #f8fbff 0%, #eef2f7 60%, #ffffff 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+    transition: background 0.4s ease, color 0.3s ease;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.hero {
+    background: linear-gradient(120deg, #0d6efd, #6610f2);
+    color: var(--text-light);
+    padding: 3rem 0;
+    border-radius: 0 0 32px 32px;
+}
+
+.hero .btn {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card {
+    border: none;
+    background: #ffffff;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(13, 110, 253, 0.1);
+    pointer-events: none;
+}
+
+.metric-card .card-title {
+    font-size: 1.4rem;
+}
+
+.display-number {
+    font-variant-numeric: tabular-nums;
+}
+
+.table-container {
+    max-height: 480px;
+    overflow: auto;
+}
+
+.table-container table {
+    margin-bottom: 0;
+}
+
+.chart-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.list-group-item {
+    border-left: 4px solid transparent;
+    transition: border 0.2s ease;
+}
+
+.list-group-item:hover {
+    border-left-color: var(--accent);
+    background-color: var(--accent-soft);
+}
+
+/* Dark mode */
+body.dark-mode {
+    background: radial-gradient(circle at top, #1b2234, #0d121f);
+    color: var(--text-light);
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(120deg, #212a3b, #141a27);
+}
+
+body.dark-mode .metric-card,
+body.dark-mode .chart-card,
+body.dark-mode .table-container,
+body.dark-mode .list-group-item {
+    background: #1f2633;
+    color: var(--text-light);
+}
+
+body.dark-mode .list-group-item {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .list-group-item:hover {
+    border-left-color: #4dabf7;
+    background-color: rgba(77, 171, 247, 0.12);
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode .input-group-text {
+    background: #111827;
+    border-color: #2a3142;
+    color: var(--text-light);
+}
+
+body.dark-mode .btn-outline-secondary {
+    color: var(--text-light);
+    border-color: #4dabf7;
+}
+
+@media (max-width: 576px) {
+    .hero {
+        text-align: center;
+    }
+
+    #themeToggle {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
